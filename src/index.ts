@@ -39,7 +39,7 @@ const createWindow = (): void => {
   splashScreen.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
   mainWindow.removeMenu();
 
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
   // run server
 
   run_server(mainWindow);
