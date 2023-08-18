@@ -42,7 +42,7 @@ const createWindow = (): void => {
   run_server(mainWindow);
 
   // and load the index.html of the app.
-  mainWindow.loadURL("http://192.168.6.6:3002").then(() => {
+  mainWindow.loadURL("https://beta.tlift.ir").then(() => {
     setTimeout(() => {
       splashScreen.hide();
       mainWindow.show();
