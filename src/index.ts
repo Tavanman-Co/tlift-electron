@@ -19,6 +19,8 @@ const createWindow = (): void => {
       webSecurity: false,
       allowRunningInsecureContent: true,
       nodeIntegration: true,
+      nodeIntegrationInWorker: true,
+      contextIsolation: false
     },
     autoHideMenuBar: true,
     show: false,
@@ -37,12 +39,13 @@ const createWindow = (): void => {
   splashScreen.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
   mainWindow.removeMenu();
 
+  mainWindow.webContents.openDevTools();
   // run server
 
   run_server(mainWindow);
 
   // and load the index.html of the app.
-  mainWindow.loadURL("https://beta.tlift.ir").then(() => {
+  mainWindow.loadURL("http://localhost:3001").then(() => {
     setTimeout(() => {
       splashScreen.hide();
       mainWindow.show();

@@ -1,11 +1,10 @@
-import { Request } from "express";
 import { Controller } from "../controller";
 
 class WindowController extends Controller {
-    resize(req: Request) {
+    resize(width: number, height: number) {
         Controller.windows.unmaximize();
         Controller.windows.setResizable(true);
-        Controller.windows.setBounds({width: req.body["width"], height: req.body["height"]});
+        Controller.windows.setBounds({ width, height });
         Controller.windows.setResizable(false);
         Controller.windows.center();
     }
@@ -15,10 +14,10 @@ class WindowController extends Controller {
     close(req: Request) {
         Controller.windows.close();
     }
-    minimize(req: Request) {
+    minimize() {
         Controller.windows.minimize();
     }
-    maximize(req: Request) {
+    maximize() {
         Controller.windows.setResizable(true);
         Controller.windows.maximize();
     }
