@@ -5,7 +5,7 @@ export class Controller {
     static splashScreen: BrowserWindow;
 
     constructor(windows: BrowserWindow) {
-        if (!Controller.windows) {
+        if (!Controller.windows || Controller.windows.isDestroyed()) {
             Controller.windows = windows;
         }
     }

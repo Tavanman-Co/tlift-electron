@@ -5,17 +5,18 @@ import WindowController from "./controllers/windowController";
 
 export function run_server(electron: BrowserWindow) {
     new Controller(electron);
+    const controller = new WindowController(electron);
 
+    ipcMain.on('close-main-window', () => {
+        controller.close();
+    });
     ipcMain.on('minimize-main-window', () => {
-        const controller = new WindowController(electron);
         controller.minimize();
     });
     ipcMain.on('maximize-main-window', () => {
-        const controller = new WindowController(electron);
         controller.maximize();
     });
     ipcMain.on('resize-main-window', (e, width, height) => {
-        const controller = new WindowController(electron);
         controller.resize(width, height);
     });
 }

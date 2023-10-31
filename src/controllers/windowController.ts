@@ -11,8 +11,8 @@ class WindowController extends Controller {
     show(req: Request) {
         Controller.windows.show();
     }
-    close(req: Request) {
-        Controller.windows.close();
+    close() {
+        Controller.windows.destroy();
     }
     minimize() {
         Controller.windows.minimize();
