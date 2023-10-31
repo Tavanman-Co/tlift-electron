@@ -33,7 +33,9 @@ const openApp = () => {
   });
   createWindow()
 }
+
 if (!gotTheLock) {
+  dialog.showErrorBox("Error in opening app","تیلیفت در حال حاظر در حال اجرا است اگر در حال اجرا نیست لطفا سیسیتم خود را ری استارت کنید!");
   app.quit()
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory) => {
@@ -53,7 +55,9 @@ if (!gotTheLock) {
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
-  app.whenReady().then(() => openApp());
+  app.whenReady().then(() => {
+    openApp()
+  });
 
   app.on('open-url', (event, url) => {
     dialog.showErrorBox('Welcome Back', `You arrived from: ${url}`)
@@ -95,7 +99,7 @@ const createWindow = (): void => {
 
   run_server(mainWindow);
 
-  // and load the index.html of the app.
+  // and load the index.html of the app.  
   mainWindow.loadURL(CLIENT_SERVER).then(() => {
     setTimeout(() => {
       splashScreen.hide();
