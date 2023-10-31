@@ -6,7 +6,7 @@ import * as path from "path";
 // whether you're running in development or production).
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
-const CLIENT_SERVER = "http://localhost:4200";
+const CLIENT_SERVER = "http://tlift.tavanmandteam.ir";
 let mainWindow: BrowserWindow;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
