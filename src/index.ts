@@ -6,7 +6,14 @@ import * as path from "path";
 // whether you're running in development or production).
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
-const CLIENT_SERVER = "http://tlift.tavanmandteam.ir";
+const servers = {
+  moradiApp: "https://central-app.sepehr-asansor.ir/",
+  productionMain: "https://central-app.tlift.ir/",
+  staging: "https://central.tavanmandteam.ir",
+  local: "https://central.tavanmandteam.ir",
+}
+
+const CLIENT_SERVER = servers.moradiApp;
 let mainWindow: BrowserWindow;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -79,6 +86,7 @@ const createWindow = (): void => {
     show: false,
     focusable: true,
     frame: false,
+    icon: "./assets/images/icon.png",
   });
   const splashScreen = new BrowserWindow({
     autoHideMenuBar: true,
@@ -86,7 +94,8 @@ const createWindow = (): void => {
     focusable: true,
     frame: false,
     width: 600,
-    height: 300
+    height: 300,
+    icon: "./assets/images/icon.png",
   });
   splashScreen.removeMenu();
   splashScreen.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
