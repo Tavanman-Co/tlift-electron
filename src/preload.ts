@@ -13,3 +13,4 @@ import { ipcRenderer, shell } from "electron"
 };
 
 (window as any).openOSBrowser = (url: string) => shell.openExternal(url);
+(window as any).openNewElectronWindow = (url: string, width:number, height:number) => ipcRenderer.send('open-new-electron-window', url, width, height);

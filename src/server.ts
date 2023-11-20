@@ -19,4 +19,7 @@ export function run_server(electron: BrowserWindow) {
     ipcMain.on('resize-main-window', (e, width, height) => {
         controller.resize(width, height);
     });
+    ipcMain.on('open-new-electron-window', (e, url, width, height) => {
+        controller.openNewWindow(url, {width, height});
+    });
 }

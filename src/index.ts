@@ -9,11 +9,11 @@ declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 const servers = {
   moradiApp: "https://central-app.sepehr-asansor.ir/",
   productionMain: "https://central-app.tlift.ir/",
-  staging: "https://central.tavanmandteam.ir",
-  local: "https://central.tavanmandteam.ir",
+  staging: "http://tlift.tavanmandteam.ir",
+  local: "http://localhost:4200/",
 }
 
-const CLIENT_SERVER = servers.moradiApp;
+const CLIENT_SERVER = servers.local;
 let mainWindow: BrowserWindow;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -42,7 +42,7 @@ const openApp = () => {
 }
 
 if (!gotTheLock) {
-  dialog.showErrorBox("Error in opening app","تیلیفت در حال حاظر در حال اجرا است اگر در حال اجرا نیست لطفا سیسیتم خود را ری استارت کنید!");
+  // dialog.showErrorBox("Error in opening app","تیلیفت در حال حاظر در حال اجرا است اگر در حال اجرا نیست لطفا سیسیتم خود را ری استارت کنید!");
   app.quit()
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory) => {
