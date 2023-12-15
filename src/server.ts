@@ -16,6 +16,13 @@ export function run_server(electron: BrowserWindow) {
     ipcMain.on('maximize-main-window', () => {
         controller.maximize();
     });
+    ipcMain.on('maximize-and-unMaximize-auto-main-window', () => {
+        if(controller.isMaximized()){
+            controller.unMaximize();
+        }else{
+            controller.maximize();
+        }
+    });
     ipcMain.on('resize-main-window', (e, width, height) => {
         controller.resize(width, height);
     });

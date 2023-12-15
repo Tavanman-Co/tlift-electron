@@ -13,7 +13,7 @@ const servers = {
   local: "http://localhost:4200/",
 }
 
-const CLIENT_SERVER = servers.local;
+const CLIENT_SERVER = servers.staging;
 let mainWindow: BrowserWindow;
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -103,7 +103,8 @@ const createWindow = (): void => {
 
   // Export so you can access it from the renderer thread
   // module.exports.getLink = () => link;
-  // mainWindow.webContents.openDevTools();
+  if(servers.local === CLIENT_SERVER || servers.staging === CLIENT_SERVER)
+  mainWindow.webContents.openDevTools();
   // run server
 
   run_server(mainWindow);

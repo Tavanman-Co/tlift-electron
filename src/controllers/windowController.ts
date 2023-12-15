@@ -19,6 +19,12 @@ class WindowController extends Controller {
     minimize() {
         Controller.windows.minimize();
     }
+    unMaximize(){
+        Controller.windows.unmaximize();
+    }
+    isMaximized(){
+        return Controller.windows.isMaximized();
+    }
     maximize() {
         Controller.windows.setResizable(true);
         Controller.windows.maximize();
