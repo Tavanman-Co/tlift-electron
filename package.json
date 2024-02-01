@@ -1,48 +1,50 @@
 {
-  "name": "tlift-sepehr-asansor",
-  "productName": "TLift Staging",
-  "version": "1.1.0",
-  "description": "TLift",
-  "main": ".webpack/main",
-  "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
-  },
-  "keywords": [],
-  "author": {
-    "name": "Tavanmand",
-    "email": "info@tavanamand.ir"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@electron-forge/cli": "^6.1.1",
-    "@electron-forge/maker-deb": "^6.1.1",
-    "@electron-forge/maker-rpm": "^6.1.1",
-    "@electron-forge/maker-squirrel": "^6.1.1",
-    "@electron-forge/maker-zip": "^6.1.1",
-    "@electron-forge/plugin-webpack": "^6.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "@vercel/webpack-asset-relocator-loader": "1.7.3",
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.0.0",
-    "electron": "25.0.1",
-    "eslint": "^8.0.1",
-    "eslint-plugin-import": "^2.25.0",
-    "fork-ts-checker-webpack-plugin": "^7.2.13",
-    "node-loader": "^2.0.0",
-    "style-loader": "^3.0.0",
-    "ts-loader": "^9.2.2",
-    "ts-node": "^10.0.0",
-    "typescript": "~4.5.4"
-  },
-  "dependencies": {
-    "@electron-forge/maker-dmg": "^6.4.2",
-    "@electron-forge/maker-wix": "^6.4.2",
-    "electron-squirrel-startup": "^1.0.0",
-    "getmac": "^6.4.0"
-  }
+    "name": "tlift-sepehr-asansor",
+    "productName": "Tlift Sepehr Asansor",
+    "version": "1.1.2",
+    "description": "TLift",
+    "main": ".webpack/main",
+    "scripts": {
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make",
+        "publish": "electron-forge publish",
+        "build:all": "npx ts-node ./build.ts",
+        "lint": "eslint --ext .ts,.tsx ."
+    },
+    "keywords": [],
+    "author": {
+        "name": "Tavanmand",
+        "email": "info@tavanamand.ir"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@electron-forge/cli": "^6.1.1",
+        "@electron-forge/maker-deb": "^6.1.1",
+        "@electron-forge/maker-rpm": "^6.1.1",
+        "@electron-forge/maker-squirrel": "^6.1.1",
+        "@electron-forge/maker-zip": "^6.1.1",
+        "@electron-forge/plugin-webpack": "^6.1.1",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "@vercel/webpack-asset-relocator-loader": "1.7.3",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.0.0",
+        "electron": "25.0.1",
+        "eslint": "^8.0.1",
+        "eslint-plugin-import": "^2.25.0",
+        "fork-ts-checker-webpack-plugin": "^7.2.13",
+        "node-loader": "^2.0.0",
+        "style-loader": "^3.0.0",
+        "ts-loader": "^9.2.2",
+        "ts-node": "^10.9.2",
+        "typescript": "~4.5.4"
+    },
+    "dependencies": {
+        "@electron-forge/maker-dmg": "^6.4.2",
+        "@electron-forge/maker-wix": "^6.4.2",
+        "child_process": "^1.0.2",
+        "electron-squirrel-startup": "^1.0.0",
+        "getmac": "^6.4.0"
+    }
 }

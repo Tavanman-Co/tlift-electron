@@ -54,6 +54,16 @@ const config: ForgeConfig = {
       },
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-electron-release-server',
+      config: {
+        baseUrl: 'https://update.sepehr-asansor.ir',
+        username: 'admin',
+        password: process.env.PASSWORD // string
+      }
+    }
+  ]
 };
 
 export default config;

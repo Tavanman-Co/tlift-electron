@@ -31,6 +31,7 @@ class WindowController extends Controller {
     }
     openNewWindow(url: string,size: {width: number,height: number}){
         const newWindow = new BrowserWindow({
+            parent: Controller.windows,
             webPreferences: {
               preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
               webSecurity: false,
@@ -45,7 +46,8 @@ class WindowController extends Controller {
             frame: true,
             width: size.width,
             height: size.height,
-            resizable: false,
+            resizable: true,
+            modal: true,
           });
 
           newWindow.loadURL(url);
