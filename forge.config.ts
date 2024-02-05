@@ -60,7 +60,8 @@ const config: ForgeConfig = {
       config: {
         baseUrl: 'https://update.sepehr-asansor.ir',
         username: 'admin',
-        password: process.env.PASSWORD // string
+        password: process.env.PASSWORD, // string
+        chanel: "stable",
       }
     }
   ]

@@ -47,5 +47,7 @@ export class Builder {
             await this.changeFolder(this.env[i].name);
             console.log("end building",  this.env[i].appName);
         }
+
+        // TODO :: reset package json
     }
 }
