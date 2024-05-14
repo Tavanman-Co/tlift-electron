@@ -16,6 +16,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     icon: iconPath, // Using the resolved path
     // Define the working directory explicitly
+    
   },
   rebuildConfig: {},
   makers: [
@@ -54,17 +55,6 @@ const config: ForgeConfig = {
       },
     }),
   ],
-  publishers: [
-    {
-      name: '@electron-forge/publisher-electron-release-server',
-      config: {
-        baseUrl: 'https://update.sepehr-asansor.ir',
-        username: 'admin',
-        password: process.env.PASSWORD, // string
-        chanel: "stable",
-      }
-    }
-  ]
 };
 
 export default config;

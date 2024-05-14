@@ -1,6 +1,6 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
-import { ipcRenderer, shell } from "electron"
+import { ipcRenderer, shell,app } from "electron"
 import getMAC from "getmac";
 interface IListers{
     onChangeLocation: (url: string) => void;
@@ -14,6 +14,7 @@ interface IListers{
 (window as any).isMaximized = () => ipcRenderer.send('isMaximized-main-window');
 (window as any).resize = (width: number, height: number) => ipcRenderer.send('resize-main-window', width, height);
 (window as any).maximizeAndUndoAuto = () => ipcRenderer.send('maximize-and-unMaximize-auto-main-window');
+(window as any).electronVersion = app?.getVersion();
 
 (window as any).setListers = (props: IListers) => {
     ipcRenderer.on('change-location', (e, url) => props.onChangeLocation(url));

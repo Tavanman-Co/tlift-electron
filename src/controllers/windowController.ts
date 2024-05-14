@@ -1,4 +1,4 @@
-import { BrowserWindow } from "electron";
+import { app,BrowserWindow } from "electron";
 import { Controller } from "../controller";
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
